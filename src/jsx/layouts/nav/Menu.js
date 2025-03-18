@@ -122,7 +122,28 @@ export const MenuList = [
                         iconStyle: <i className="fas fa-concierge-bell"></i>,
                          to: 'admin/service',
                          
-                        },   
+                        },
+                        {
+                            title: 'Category',
+                            classsChange: 'mm-collapse',		
+                            iconStyle: <i className="fa fa-list-alt"></i>,
+                             to: 'admin/category',
+                             
+                            },  
+                            {
+                                title: 'Package',
+                                classsChange: 'mm-collapse',		
+                                iconStyle:  <i className="fa fa-box"></i>,
+                                 to: 'admin/package',
+                                 
+                                },   
+                                {
+                                    title: 'Testimonial',
+                                    classsChange: 'mm-collapse',		
+                                    iconStyle: <i className="fa fa-quote-left"></i>,
+                                     to: 'admin/testimonial',
+                                     
+                                    },   
     //CMS
     // {
     //     title : "CMS",

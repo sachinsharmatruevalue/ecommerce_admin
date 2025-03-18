@@ -79,7 +79,7 @@ function App(props) {
                 <Route path='/contact-us' element={<FrontContact />} />
                 <Route path='/services' element={<FrontService />} />
                 <Route path='/blogs' element={<FrontBlog />} />
-                <Route path="/blog-details/:id" element={<FrontBlogDetail />} />
+                <Route path="/blog-details/:slug" element={<FrontBlogDetail />} />
                 <Route path="/service-details/:id" element={<FrontServiceDetail />} />
             </Route>
 

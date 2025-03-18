@@ -1,5 +1,6 @@
 import axios from 'axios';
 import swal from "sweetalert";
+
 import {
     loginConfirmedAction,
     Logout,
@@ -26,7 +27,7 @@ export function login(email, password) {
     };
     return axios.post(
         // `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD3RPAp3nuETDn9OQimqn_YF6zdzqWITII`,
-        `http://localhost:3002/api/v1/admin/login`,
+       `${process.env.REACT_APP_API_BASE_URL}/admin/login`,
         postData,
     );
 }

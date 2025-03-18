@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import NotificationServices from '../../../services/NotificationService';
 import BlogServices from '../../../services/BlogServices';
 import BannerServices from '../../../services/BannerService';
+import CategoryServices from '../../../services/CategoryService';
+import TestimonialServices from '../../../services/TestimonialService';
+import PackageServices from '../../../services/PackageService';
 import HealthServices from '../../../services/healthService';
 import UserServices from '../../../services/UserService';
 const TogalButtonForStatus = ({ data, page ,onSuccess}) => {
@@ -25,6 +28,24 @@ const TogalButtonForStatus = ({ data, page ,onSuccess}) => {
     }
     else if (page === 'Banner') {
       const res = await BannerServices.updateBanner(data._id, {
+        status: newStatus
+      });
+      onSuccess();
+    }
+    else if (page === 'Category') {
+      const res = await CategoryServices.updateCat(data._id, {
+        status: newStatus
+      });
+      onSuccess();
+    }
+    else if (page === 'Testimonial') {
+      const res = await TestimonialServices.updateTestimonial(data._id, {
+        status: newStatus
+      });
+      onSuccess();
+    }
+    else if (page === 'Package') {
+      const res = await PackageServices.updatePackage(data._id, {
         status: newStatus
       });
       onSuccess();

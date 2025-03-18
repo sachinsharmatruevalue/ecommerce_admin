@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 Modal.setAppElement('#root');
 
 function Banner() {
-  const { data, error, isLoading, run } = useAsync(BannerServices.getBanner);
+  const { data,  run } = useAsync(BannerServices.getBanner);
 
   const count = data?.data?.length;
   const [activeIndex, setActiveIndex] = useState(null);
@@ -87,7 +87,7 @@ function Banner() {
         <div className="title-box">
           <h2>Banner List <span className="badge bg-orange">{count}</span></h2>
           <div className="container-box-top-header-right">
-            <Link className="round-add-btn" to="/add-banner">Add Banner</Link>
+            <Link className="round-add-btn" to="/admin/add-banner">Add Banner</Link>
           </div>
         </div>
 
@@ -112,9 +112,10 @@ function Banner() {
                   <th>#</th>
                   <th>IMAGE</th>
                   <th>TITLE</th>
+                  <th>DATE</th>
                   <th>STATUS</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
                 </tr>
               </thead>
               <tbody>

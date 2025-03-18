@@ -87,7 +87,7 @@ function Notification() {
         <div className="title-box">
           <h2>Notification List <span className="badge bg-orange">{count}</span></h2>
           <div className="container-box-top-header-right">
-            <Link className="round-add-btn" to="/add-notification">Add Notification</Link>
+            <Link className="round-add-btn" to="/admin/add-notification">Add Notification</Link>
           </div>
         </div>
           
@@ -115,8 +115,8 @@ function Notification() {
                   <th className="w-50">DESCRIPTION</th>
                   <th>DATE</th>
                   <th>STATUS</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
                 </tr>
               </thead>
               <tbody>

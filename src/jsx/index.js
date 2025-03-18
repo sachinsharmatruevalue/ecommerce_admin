@@ -139,6 +139,12 @@ import UserManager from "./components/UserManager/user";
 // import FrontContact from "./components/frontend/contact";
 // import FrontService from "./components/frontend/service";
 import Profile from "./components/Profile/profile";
+import AddCategory from "./components/Category/addCategory";
+import Category from "./components/Category/category";
+import AddTestimonial from "./components/Testimonial/addTestimonial";
+import Testimonial from "./components/Testimonial/testimonial";
+import AddPackage from "./components/Package/addPackage";
+import Package from "./components/Package/package";
 
 
 const Markup = () => {
@@ -166,6 +172,12 @@ const Markup = () => {
     { url: "admin/add-blogs", component: <AddBlogs /> },
     { url: "admin/banner", component: <Banner /> },
     { url: "admin/add-banner", component: <AddBanner /> },
+    { url: "admin/category", component: <Category /> },
+    { url: "admin/add-category", component: <AddCategory /> },
+    { url: "admin/testimonial", component: <Testimonial /> },
+    { url: "admin/add-testimonial", component: <AddTestimonial/> },
+    { url: "admin/package", component: <Package /> },
+    { url: "admin/add-package", component: <AddPackage/> },
     { url: "admin/service", component: <Service /> },
     { url: "admin/add-service", component: <AddService /> },
     { url: "admin/profile", component: <Profile /> },

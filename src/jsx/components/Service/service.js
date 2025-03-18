@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 Modal.setAppElement('#root');
 
 function Service() {
-  const { data, error, isLoading, run } = useAsync(HealthServices.getService);
+  const { data, run } = useAsync(HealthServices.getService);
   
   const count = data?.data?.length;
   const [activeIndex, setActiveIndex] = useState(null);
@@ -86,7 +86,7 @@ function Service() {
         <div className="title-box">
           <h2>Service List <span className="badge bg-orange">{count}</span></h2>
           <div className="container-box-top-header-right">
-            <Link className="round-add-btn" to="/add-service">Add Service</Link>
+            <Link className="round-add-btn" to="/admin/add-service">Add Service</Link>
           </div>
         </div>
           
@@ -110,14 +110,14 @@ function Service() {
                 <tr>
                   <th>#</th>
                   <th>IMAGE</th>
-                  <th>Name</th>
-                  <th></th>
-                  <th>Category</th>
-                  <th>Price</th>
-                  <th>Date</th>
+                  <th>NAME</th>
+                  <th>DURATION</th>
+                  <th>PRICE</th>
+                  <th>CATEGORY</th>
+                  <th>DATE</th>
                   <th>STATUS</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
                 </tr>
               </thead>
               <tbody>

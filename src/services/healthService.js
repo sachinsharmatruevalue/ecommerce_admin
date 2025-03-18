@@ -11,7 +11,10 @@ const HealthService = {
     updateService : async (id,body) =>{
         return requests.patch(`/service/${id}`,body);
     },
-
+    getServiceById : async (id) =>{
+        // console.log("id",id)
+        return requests.get(`/service/${id}`);
+    },
     createService : async (body) =>{
    
         return requests.post(`/service`,body);

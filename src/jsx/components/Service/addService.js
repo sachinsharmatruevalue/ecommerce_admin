@@ -51,7 +51,7 @@ function AddService() {
 
       await HealthServices.createService(formData);
       alert("Service Added Successfully");
-      navigate("/service");
+      navigate("/admin/service");
     } catch (error) {
       console.error("Failed to add service details", error);
       alert("Failed to add service details");
@@ -63,7 +63,7 @@ function AddService() {
       <div className="title-box">
         <h2>Add Service</h2>
         <div className="container-box-top-header-right">
-          <Link className="round-add-btn" to="/service">
+          <Link className="round-add-btn" to="/admin/service">
             Service List
           </Link>
         </div>

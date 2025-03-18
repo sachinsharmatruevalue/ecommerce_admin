@@ -5,6 +5,7 @@ import BlogServices from '../../../services/BlogServices';
 function UpdateBlog({ blog, closeModal, onSuccess }) {
   const [formValues, setFormValues] = useState({
     title: "",
+    slug: "",
     author: "",
     content: "",
     image: "",
@@ -20,6 +21,7 @@ function UpdateBlog({ blog, closeModal, onSuccess }) {
         content: blog?.content || '',
         image: blog?.image || '',
         author: blog?.author || '',
+        slug: blog?.slug || '',
         category: blog?.category || '',
         blogStatus: blog?.blogStatus || '',
        
@@ -122,7 +124,22 @@ function UpdateBlog({ blog, closeModal, onSuccess }) {
                     />
                   </div>
                 </div>
-
+                <div className="col-lg-12 col-md-6">
+                  <div className="input-field">
+                    <label>
+                      Slug <span className="red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="slug"
+                      className="form-control"
+                      value={formValues.slug}
+                      onChange={handleInputChange}
+                      placeholder="New slug"
+                      required
+                    />
+                  </div>
+                </div>
                 {/* Description */}
                 <div className="col-sm-12">
                   <div className="input-field">
@@ -173,7 +190,7 @@ function UpdateBlog({ blog, closeModal, onSuccess }) {
                       className="form-control"
                       accept="image/png, image/jpeg, image/jpg, image/webp"
                       onChange={handleFileChange}
-                      required
+                  
                     />
                     <p>
                       <span>

@@ -216,7 +216,8 @@ function Profile() {
                         className="form-control"
                       />
                     </div> */}
-                    <button className="site-btn-green">SAVE</button>
+                    <button  className="btn btn-primary mb-3"
+                style={{ marginTop: "10px" }}>SAVE</button>
                   </form>
                 </div>
               </div>
@@ -259,7 +260,8 @@ function Profile() {
                         placeholder="Confirm new password"
                       />
                     </div>
-                    <button className="site-btn-green">
+                    <button  className="btn btn-primary mb-3"
+                style={{ marginTop: "10px" }}>
                       SAVE CHANGE
                     </button>
                   </form>

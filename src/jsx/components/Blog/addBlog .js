@@ -4,9 +4,10 @@ import BlogServices from "../../../services/BlogServices";
 import AddImage from "../../../images/placeholder-img.svg";
 
 function AddBlog() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const [formValues, setFormValues] = useState({
     title: "",
+    slug: "",
     author: "",
     content: "",
     image: "",
@@ -51,7 +52,7 @@ function AddBlog() {
 
       await BlogServices.createBlog(formData);
       alert("Blog Added Successfully");
-      navigate("/blogs");
+      navigate("/admin/blogs");
     } catch (error) {
       console.error("Failed to add blog details", error);
       alert("Failed to add blog details");
@@ -108,7 +109,22 @@ function AddBlog() {
                     />
                   </div>
                 </div>
-
+                <div className="col-lg-12 col-md-6">
+                  <div className="input-field">
+                    <label>
+                      Slug <span className="red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="slug"
+                      className="form-control"
+                      value={formValues.slug}
+                      onChange={handleInputChange}
+                      placeholder="New slug"
+                      required
+                    />
+                  </div>
+                </div>
                 {/* Description */}
                 <div className="col-sm-12">
                   <div className="input-field">

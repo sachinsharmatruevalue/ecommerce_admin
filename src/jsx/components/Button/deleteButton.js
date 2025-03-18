@@ -2,6 +2,9 @@ import React from 'react';
 import NotificationServices from '../../../services/NotificationService';
 import BlogServices from '../../../services/BlogServices';
 import BannerServices from '../../../services/BannerService';
+import CategoryServices from '../../../services/CategoryService';
+import TestimonialServices from '../../../services/TestimonialService';
+import PackageServices from '../../../services/PackageService';
 import HealthServices from '../../../services/healthService';
 import UserServices from '../../../services/UserService';
 function DeleteButton({ data, page, closeModal, onSuccess }) {
@@ -38,6 +41,45 @@ function DeleteButton({ data, page, closeModal, onSuccess }) {
     else if (page === 'Banner') {
 
       const res = await BannerServices.deleteBanner(data._id);
+  
+      if(res.status === true){
+        alert('deleted successfully');
+        closeModal();
+        onSuccess();
+      } 
+      else {
+        console.log(res)
+      }
+    }
+    else if (page === 'Category') {
+
+      const res = await CategoryServices.deleteCat(data._id);
+  
+      if(res.status === true){
+        alert('deleted successfully');
+        closeModal();
+        onSuccess();
+      } 
+      else {
+        console.log(res)
+      }
+    }
+    else if (page === 'Testimonial') {
+
+      const res = await TestimonialServices.deleteTestimonial(data._id);
+  
+      if(res.status === true){
+        alert('deleted successfully');
+        closeModal();
+        onSuccess();
+      } 
+      else {
+        console.log(res)
+      }
+    }
+    else if (page === 'Package') {
+
+      const res = await PackageServices.deletePackage(data._id);
   
       if(res.status === true){
         alert('deleted successfully');

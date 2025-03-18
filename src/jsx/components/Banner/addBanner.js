@@ -48,7 +48,7 @@ function AddBanner() {
 
       await BannerServices.createBanner(formData);
       alert("Banner Added Successfully");
-      navigate("/banner");
+      navigate("/admin/banner");
     } catch (error) {
       console.error("Failed to add banner details", error);
       alert("Failed to add banner details");
@@ -60,7 +60,7 @@ function AddBanner() {
       <div className="title-box">
         <h2>Add Banner</h2>
         <div className="container-box-top-header-right">
-          <Link className="round-add-btn" to="/banner">
+          <Link className="round-add-btn" to="/admin/banner">
             Banner List
           </Link>
         </div>

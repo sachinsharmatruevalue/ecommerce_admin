@@ -1,18 +1,19 @@
+
 import React, { useState, useEffect } from 'react';
-import BlogServices from '../../../services/BlogServices';
+import TestimonialServices from '../../../services/TestimonialService';
 import HelpTogal from '../StatusTogel/status';
 import useAsync from '../../hooks/useAsync';
 import Modal from 'react-modal';
 import DeleteButton from '../Button/deleteButton';
-import BlogUpdate from './editBlog';
+import TestimonialUpdate from './updateTestimonial';
 import { Link } from 'react-router-dom';
 
 
 Modal.setAppElement('#root');
 
-function Blog() {
-  const { data,  run } = useAsync(BlogServices.getBlog);
-  
+function Testimonial() {
+  const { data, run } = useAsync(TestimonialServices.getTestimonial);
+
   const count = data?.data?.length;
   const [activeIndex, setActiveIndex] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -24,8 +25,8 @@ function Blog() {
   useEffect(() => {
     if (data?.data) {
       setFilteredData(
-        data.data.filter(blog =>
-          blog.title.toLowerCase().includes(searchTerm.toLowerCase()) 
+        data.data.filter(testimonial =>
+            testimonial.name.toLowerCase().includes(searchTerm.toLowerCase())
         )
       );
     }
@@ -60,46 +61,50 @@ function Blog() {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
-  
+
 
   function formatDateTime(isoString) {
     const date = new Date(isoString);
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
     const year = date.getFullYear();
-    
+
     return `${day}/${month}/${year}`;
   }
- 
-  
+
+
   function truncateText(text, limit) {
-    const words = text.split(' ');
+    if (!text || typeof text !== "string") {
+        return ""; // Agar text undefined/null hai, to empty string return karein
+    }
+    const words = text.split(" ");
     if (words.length > limit) {
-      return words.slice(0, limit).join(' ') + '...';
+        return words.slice(0, limit).join(" ") + "...";
     }
     return text;
-  }
+}
+
 
   return (
     <>
       <div className="right_col" role="main">
         <div className="title-box">
-          <h2>Blog List <span className="badge bg-orange">{count}</span></h2>
+          <h2>Testimonial List <span className="badge bg-orange">{count}</span></h2>
           <div className="container-box-top-header-right">
-            <Link className="round-add-btn" to="/admin/add-blogs">Add Blog</Link>
+            <Link className="round-add-btn" to="/admin/add-testimonial">Add Testimonial</Link>
           </div>
         </div>
-          
-        
+
+
         <div className="container-box px-0">
           <div className="container-box-top-header px-4">
             <div className="container-box-top-header-left-2">
-              <input 
-                type="search" 
-                name="search" 
-                placeholder="Search by Blog Title" 
-                value={searchTerm} 
-                onChange={handleSearchChange} 
+              <input
+                type="search"
+                name="search"
+                placeholder="Search by Testimonial Title"
+                value={searchTerm}
+                onChange={handleSearchChange}
               />
               <button className="search-btn">Search</button>
             </div>
@@ -109,37 +114,28 @@ function Blog() {
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>IMAGE</th>
-                  <th>TITLE</th>
-                  <th className="w-50">DESCRIPTION</th>
-                  <th>AUTHOR</th>
-                  <th>BLOG STATUS</th>
+                  <th>NAME</th>
+                  <th>MESSAGE</th>
                   <th>DATE</th>
                   <th>STATUS</th>
-                  <th>EDTI</th>
+                  <th>EDIT</th>
                   <th>DELETE</th>
                 </tr>
               </thead>
               <tbody>
-                {filteredData.map((blog, index) => (
+                {filteredData.map((testimonial, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>
-                      <div className="product-img">
-                        <img src={process.env.REACT_APP_URL + blog?.image} alt="" style={{ height: '70px', width: '70px', objectFit: 'contain' }} />
-                      </div>
-                    </td>
-                    <td>{truncateText(blog?.title,10)}</td>
-                    <td>{truncateText(blog?.content, 15)}</td>
-                    <td>{blog?.author}</td>
-                    <td>{blog?.blogStatus}</td>
-                    <td>{formatDateTime(blog?.createdAt)}</td>
+                  
+                    <td>{truncateText(testimonial?.name, 15)}</td>
+                    <td>{truncateText(testimonial?.message, 15)}</td>
+                    <td>{formatDateTime(testimonial?.createdAt)}</td>
                     <td className="status-toggle">
-                    <HelpTogal data={blog} page='Blog' onSuccess={() => run()} />
-                  </td>
-                        <td><button className="btn btn-warning btn-sm content-icon me-1" onClick={() => handleEditDetails(blog)}><i className="fa fa-edit"></i></button></td>
-                        <td><button className="btn btn-danger btn-sm content-icon ms-1" onClick={() => handleDelete(blog)}><i className="fa fa-times"></i></button></td>
-                    
+                      <HelpTogal data={testimonial} page='Testimonial' onSuccess={() => run()} />
+                    </td>
+                    <td><button className="btn btn-warning btn-sm content-icon me-1" onClick={() => handleEditDetails(testimonial)}><i className="fa fa-edit"></i></button></td>
+                    <td><button className="btn btn-danger btn-sm content-icon ms-1" onClick={() => handleDelete(testimonial)}><i className="fa fa-times"></i></button></td>
+
                   </tr>
                 ))}
               </tbody>
@@ -153,7 +149,7 @@ function Blog() {
           className="modal-content"
           overlayClassName="modal-overlay"
         >
-          <BlogUpdate blog={selectedEdit} closeModal={closeEditModal} onSuccess={run} />
+          <TestimonialUpdate testimonial={selectedEdit} closeModal={closeEditModal} onSuccess={run} />
         </Modal>
         <Modal
           isOpen={isDeleteModalOpen}
@@ -162,11 +158,11 @@ function Blog() {
           className="modal-content"
           overlayClassName="modal-overlay"
         >
-          <DeleteButton data={selectedEdit} page="Blog" closeModal={closeDeleteModal} onSuccess={run} />
+          <DeleteButton data={selectedEdit} page="Testimonial" closeModal={closeDeleteModal} onSuccess={run} />
         </Modal>
       </div>
     </>
   );
 }
 
-export default Blog;
+export default Testimonial;

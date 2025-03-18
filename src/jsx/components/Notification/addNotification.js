@@ -51,7 +51,7 @@ function AddNotification() {
       // Assuming updateContactDetail is a method in UserServices
 
       alert('Notification Added Successfully');
-      navigate('/notification')
+      navigate('/admin/notification')
     } catch (error) {
       console.error('Failed to notification details', error);
       alert('Failed to add Notification details');
@@ -64,7 +64,7 @@ function AddNotification() {
         <div className="title-box">
           <h2>Add Notification </h2>
           <div className="container-box-top-header-right">
-            <Link className="round-add-btn" to="/notification">Notification List</Link>
+            <Link className="round-add-btn" to="/admin/notification">Notification List</Link>
           </div>
         </div>
         <div className="container-box px-5">

@@ -11678,3 +11678,36 @@ Pricing controller
   -webkit-box-shadow: none;
           box-shadow: none;
 }/*# sourceMappingURL=style.css.map */
+
+.our-service-section {
+  padding-block: 70px;
+}
+.our-service-slider-inner {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 0 4px 10px hsla(0,0%,55%,.2);
+    border-radius: 15px;
+    height: 105px;
+    width: 105px;
+    white-space: break-spaces;
+    padding: 0;
+    row-gap: 10px;
+    flex-shrink: 0;
+}
+.PackagesCarousel_packageCardTop__2KcRE {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 15px 15px 0 0;
+  border-bottom: 1px solid #d9d9d9;
+  height: 100px
+}
+
+header.cs_site_header {
+  background-color: #1e2f79;
+}
