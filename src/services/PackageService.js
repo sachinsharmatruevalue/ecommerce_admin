@@ -6,6 +6,16 @@ const PackageService = {
     getPackage: async () => {
         return requests.get(`/package`);
     },
+    getPackageSearch: async (query) => {
+        // console.log("query",query)
+        return requests.get(`/package/search?title=${query}`);
+    },
+    getPackageById: async (id) => {
+        return requests.get(`/package/${id}`);
+    },
+    getWebPackageByCategory: async (id) => {
+        return requests.get(`/package/category/${id}`);
+    },
     getWebPackage: async () => {
         return requests.get(`/package/web`);
     },

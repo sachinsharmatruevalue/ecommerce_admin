@@ -20,6 +20,10 @@ const FrontBlog = lazy(() => import('./jsx/components/frontend/blog'));
 const FrontContact = lazy(() => import('./jsx/components/frontend/contact'));
 const FrontService = lazy(() => import('./jsx/components/frontend/service'));
 const FrontServiceDetail = lazy(() => import('./jsx/components/frontend/serviceDetails'));
+
+const FrontCategoryDetail = lazy(() => import('./jsx/components/frontend/categoryPackage'));
+const FrontPackageDetail = lazy(() => import('./jsx/components/frontend/packageDetails'));
+const FrontSearchDetail = lazy(() => import('./jsx/components/frontend/search'));
 const FrontBlogDetail = lazy(() => import('./jsx/components/frontend/blogDetails'));
 
 const SignUp = lazy(() => import('./jsx/pages/Registration'));
@@ -81,6 +85,9 @@ function App(props) {
                 <Route path='/blogs' element={<FrontBlog />} />
                 <Route path="/blog-details/:slug" element={<FrontBlogDetail />} />
                 <Route path="/service-details/:id" element={<FrontServiceDetail />} />
+                <Route path="/cat-package/:id" element={<FrontCategoryDetail />} />
+                <Route path="/package-details/:id" element={<FrontPackageDetail />} />
+                <Route path="/search" element={<FrontSearchDetail />} />
             </Route>
 
         </Routes>
