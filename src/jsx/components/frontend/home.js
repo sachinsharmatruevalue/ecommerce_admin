@@ -227,7 +227,7 @@ function Home() {
                     </div>
                 </div> */}
                 <a
-                    href="/about"
+                    href="/about-us"
                     className="cs_scroll_more_btn cs_fs_20 cs_white_color cs_medium position-absolute"
                 >
                     <span className="cs_scroll_more_btn_in">
@@ -325,10 +325,10 @@ function Home() {
                         </div>
                     </div>
                     <div className="cs_height_50 cs_height_lg_40" />
-                    <div className="row cs_gap_y_40">
-                        {service && service.length > 0 ? (
-                            <>
-                                {service.map((ser, index) => (
+                    <div className="row cs_gap_y_40" style={{height:"500px"}}>
+                        {pkg && pkg.length > 0 ? (
+                            <Slider {...packageSettings}>
+                                {pkg.map((pack, index) => (
                                     <div className="col-xl-4" key={index} style={{ marginBottom: "200px" }}>
                                         <div className="cs_iconbox_wrapper cs_style_2">
                                             <div
@@ -336,52 +336,33 @@ function Home() {
                                                 data-wow-duration="0.9s"
                                                 data-wow-delay="0.25s"
                                             >
-                                                <div className="cs_iconbox_icon cs_center">
-                                                    <Link to={`/service-details/${btoa(ser._id)}`}>
-                                                        {ser?.image && (
-                                                            <img
-                                                                src={`${process.env.REACT_APP_URL || ""}${ser.image}`}
-                                                                alt={ser?.name || "service image"}
-                                                                style={{
-                                                                    height: "50px",
-                                                                    width: "50px",
-                                                                    objectFit: "contain",
-                                                                }}
-                                                            />
-                                                        )}
+                                                <div className="cs_iconbox_text" style={{color:"white"}}>
+                                                    <Link to={`/package-details/${btoa(pack._id)}`}>
+                                                        <h4 className="pack-heading" style={{ color: "white" }}>{pack.title}</h4>
                                                     </Link>
-                                                </div>
-                                                <div className="cs_iconbox_text">
-                                                    <h3 className="cs_iconbox_title cs_fs_24 cs_white_color">
-                                                        <a href="service-details.html">{ser.name}</a>
-                                                    </h3>
-                                                    <p className="cs_iconbox_subtitle cs_white_color">
-                                                        {truncateText(ser.description, 20)}
+                                                    <p>
+                                                        Reports in&nbsp;
+                                                        <strong style={{ color: "white" }}>{pack.reportTime}</strong>
                                                     </p>
-                                                    <a href={`/service-details/${btoa(ser._id)}`} className="cs_text_btn">
-                                                        <span>Learn More</span>
-                                                        <div className="cs_text_btn_icon cs_center">
-                                                            <span>
-                                                                <i className="fa-solid fa-arrow-right-long" />
-                                                            </span>
-                                                            <span>
-                                                                <i className="fa-solid fa-arrow-right-long" />
-                                                            </span>
+                                                    <div className="package-plan-border" style={{ marginBlock: "10px" }}></div>
+                                                    <div className="PackagesCarousel_details_tags__nzRsl">
+                                                        <div className="PackagesCarousel_details_tags_title__9WjVn" style={{ color: "white" }}>
+                                                            {pack?.service?.map((ser) => ser.name).join(" ")}
                                                         </div>
-                                                    </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 ))}
-                            </>
+                            </Slider>
                         ) : (
-                            <p>No service available</p>
+                            <p>No package available</p>
                         )}
                     </div>
                 </div>
-
             </section>
+
             {/* End Service Section */}
             {/* Start CTA Section */}
             <section className="cs_cta cs_style_1">
