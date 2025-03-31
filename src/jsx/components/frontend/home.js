@@ -273,7 +273,7 @@ function Home() {
                 </div>
             </div>
             {/* End Video Section  */}
-            <div className="package-service-section">
+            {/* <div className="package-service-section">
                 <div className="container">
                     <h3 className="m-4">Top Health Packages</h3>
                     <div className="row cs_gap_y_40"  >
@@ -304,7 +304,7 @@ function Home() {
 
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             {/* Start Service Section */}
