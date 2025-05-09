@@ -4,13 +4,13 @@ function Footer() {
 
     return (
         <>
-            <footer className="cs_footer cs_style_1 cs_heading_bg">
+            <footer className="cs_footer cs_style_1 " style={{  backgroundColor: "rgba(18, 52, 86, 0.9)"  }}>
                 <div className="container cs_white_color">
                     <div className="cs_footer_row">
                         <div className="cs_footer_col">
                             <div className="cs_footer_widget">
                                 <div className="cs_footer_text_widget">
-                                    <img src="assets/img/footer_logo.svg" alt="Logo" />
+                                    <img src="/frontend/assets/image/index5/logos.jpeg"  alt="Logo" className='logos' />
                                     <p>
                                         Far far away, behind the word bore et dolore magna aliqua. Ut enim
                                         ad on minim veniam, quis nostrud
@@ -56,6 +56,9 @@ function Footer() {
                                     </li> */}
                                 </ul>
                             </div>
+                            
+                              
+                            
                         </div>
                         {/* <div className="cs_footer_col">
                             <div className="cs_footer_widget">
@@ -90,9 +93,21 @@ function Footer() {
                                     <li>America- 66 Brooklyn golden street 600 New York. USA</li>
                                     <li className="cs_fs_32 cs_bold cs_phone_number">
                                         <div className="cs_height_20 cs_height_lg_20" />
-                                        <a href="tel:+444547800112">+91 8888888888</a>
+                                        <i  className="fas fa-phone " /><a href="tel:+444547800112">+91 8888888888</a>
                                     </li>
                                 </ul>
+                                  <div className="footer-bottom-payment mt-3">
+                                  <ul className="cs_footer_widget_menu">
+                                    <li className='mb-3' >
+                                        <h2 className='cs_footer_widget_title cs_fs_32 cs_white_color cs_bold ' >PAYEMENT OPTION</h2>
+                                    </li>
+                                  </ul>
+                                <img
+                                    // src="/assets/images/icons/payment.png"
+                                    src="/frontend/assets/image/index5/payment.png" 
+                                    alt="Payment Methods"
+                                />
+                                </div>
                             </div>
                         </div>
                     </div>

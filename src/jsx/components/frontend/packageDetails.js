@@ -33,17 +33,17 @@ function PackageDetails() {
     return (
         <>
             {/* Page Heading */}
-            <section className="cs_page_heading cs_center cs_bg_filed">
+            <section className="cs_page_heading cs_center cs_bg_filed"  style={{ backgroundColor: "#123456" }}>
                 <div className="container">
                     <div className="cs_page_heading_in">
                         <h1 className="cs_page_heading_title cs_fs_48 cs_white_color">Packages</h1>
                         <ol className="breadcrumb cs_fs_20 cs_white_color cs_heading_font">
                             <li className="breadcrumb-item">
                                 <a href="/home">
-                                    <i className="fa-solid fa-house" /> Home
+                                    <i className="fa-solid fa-house" /> Home/
                                 </a>
                             </li>
-                            <li className="breadcrumb-item active">Package Details</li>
+                            <li className="">Package Details</li>
                         </ol>
                     </div>
                 </div>

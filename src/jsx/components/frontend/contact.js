@@ -12,6 +12,7 @@ function Contact() {
       <section
         className="cs_page_heading cs_center cs_bg_filed"
         data-src="assets/img/page_heading_bg.jpg"
+         style={{ backgroundColor: "#123456"  }}
       >
         <div className="container">
           <div className="cs_page_heading_in">
@@ -22,10 +23,10 @@ function Contact() {
               <li className="breadcrumb-item">
                 <a href="/home">
                   <i className="fa-solid fa-house" />
-                  Home
+                  Home/
                 </a>
               </li>
-              <li className="breadcrumb-item active">Contact Us</li>
+              <li >Contact Us</li>
             </ol>
           </div>
         </div>

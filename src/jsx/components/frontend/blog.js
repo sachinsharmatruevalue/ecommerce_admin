@@ -10,17 +10,17 @@ function Blogs() {
 
     return (
         <>
-            <section className="cs_page_heading cs_center cs_bg_filed" data-src="assets/img/page_heading_bg.jpg">
+            <section className="cs_page_heading cs_center cs_bg_filed" data-src="assets/img/page_heading_bg.jpg"  style={{ backgroundColor: "#123456" }}>
                 <div className="container">
                     <div className="cs_page_heading_in">
                         <h1 className="cs_page_heading_title cs_fs_48 cs_white_color">Blogs</h1>
                         <ol className="breadcrumb cs_fs_20 cs_white_color cs_heading_font">
                             <li className="breadcrumb-item">
                                 <a href="/home">
-                                    <i className="fa-solid fa-house" /> Home
+                                    <i className="fa-solid fa-house" /> Home/
                                 </a>
                             </li>
-                            <li className="breadcrumb-item active">Blogs</li>
+                            <li >Blogs</li>
                         </ol>
                     </div>
                 </div>

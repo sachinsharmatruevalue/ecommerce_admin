@@ -19,6 +19,7 @@ const FrontAbout = lazy(() => import('./jsx/components/frontend/about'));
 const FrontBlog = lazy(() => import('./jsx/components/frontend/blog'));
 const FrontContact = lazy(() => import('./jsx/components/frontend/contact'));
 const FrontService = lazy(() => import('./jsx/components/frontend/service'));
+const FrontPackage = lazy(() => import('./jsx/components/frontend/package'));
 const FrontServiceDetail = lazy(() => import('./jsx/components/frontend/serviceDetails'));
 
 const FrontCategoryDetail = lazy(() => import('./jsx/components/frontend/categoryPackage'));
@@ -86,6 +87,7 @@ function App(props) {
                 <Route path="/blog-details/:slug" element={<FrontBlogDetail />} />
                 <Route path="/service-details/:id" element={<FrontServiceDetail />} />
                 <Route path="/cat-package/:id" element={<FrontCategoryDetail />} />
+                <Route path="/package" element={< FrontPackage/>}/>
                 <Route path="/package-details/:id" element={<FrontPackageDetail />} />
                 <Route path="/search" element={<FrontSearchDetail />} />
             </Route>
